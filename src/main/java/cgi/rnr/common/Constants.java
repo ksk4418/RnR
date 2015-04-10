@@ -59,6 +59,4 @@ public interface Constants extends Serializable {
 	public static final String ACTVFL = "activeFl";
 	public static final String AWARDDESC = "awardDesc";
 	public static final String INVALIDREQUEST = "Invalid Request";
-	
-	public static final String test="test";
 }
