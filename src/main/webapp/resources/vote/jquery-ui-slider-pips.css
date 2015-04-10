@@ -1,0 +1,159 @@
+.ui-slider-pips.ui-slider-horizontal {
+	margin-bottom: 1.4em;
+}
+.ui-slider-pips .ui-slider-label {
+	display: none;
+}
+.ui-slider-pips .ui-slider-pip-hide {
+	display: none;
+}
+.ui-slider-pips .ui-slider-pip-label .ui-slider-label {
+	display: block;
+}
+.ui-slider-pips .ui-slider-pip {
+	left: 20px; top: 20px; width: 2em; height: 1em; text-align: center; color: rgb(153, 153, 153); line-height: 1em; overflow: visible; font-size: 0.8em; margin-left: -1em; position: absolute; cursor: pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+}
+.ui-slider-pips .ui-slider-line {
+	background: rgb(153, 153, 153); left: 50%; width: 1px; height: 3px; position: absolute;
+}
+.ui-slider-pips .ui-slider-label {
+	left: 50%; top: 5px; width: 2em; margin-left: -1em; position: absolute;
+}
+.ui-slider-pip:hover .ui-slider-label {
+	color: black; font-weight: bold;
+}
+.ui-slider-pips.ui-slider-vertical {
+	margin-right: 2em; margin-bottom: 1em;
+}
+.ui-slider-pips.ui-slider-vertical .ui-slider-pip {
+	left: 20px; top: auto; text-align: left; margin-bottom: -0.5em; margin-left: 0px;
+}
+.ui-slider-pips.ui-slider-vertical .ui-slider-line {
+	left: 0px; top: 50%; width: 3px; height: 1px; position: absolute;
+}
+.ui-slider-pips.ui-slider-vertical .ui-slider-label {
+	left: 0.5em; top: 50%; width: 2em; margin-top: -0.5em; margin-left: 0px;
+}
+.ui-slider-float .ui-slider-handle:focus {
+	
+}
+.ui-slider-float .ui-slider-handle:focus .ui-slider-tip {
+	
+}
+.ui-slider-float .ui-slider-handle:focus .ui-slider-tip-label {
+	
+}
+.ui-slider-float .ui-slider-tip {
+	background: white; border-radius: 3px; border: 1px solid rgb(136, 136, 136); left: 50%; top: -40px; width: 34px; height: 20px; text-align: center; color: rgb(51, 51, 51); line-height: 20px; font-size: 12px; margin-left: -18px; display: block; visibility: hidden; position: absolute; opacity: 0; -webkit-transition-duration: 200ms, 200ms, 0; -moz-transition-duration: 200ms, 200ms, 0; -ms-transition-duration: 200ms, 200ms, 0; transition-duration: 200ms, 200ms, 0; -webkit-transition-property: opacity, top, visibility; -moz-transition-property: opacity, top, visibility; -ms-transition-property: opacity, top, visibility; transition-property: opacity, top, visibility; -webkit-transition-delay: 0, 0, 200ms; -moz-transition-delay: 0, 0, 200ms; -ms-transition-delay: 0, 0, 200ms; transition-delay: 0, 0, 200ms;
+}
+.ui-slider-float .ui-slider-tip-label {
+	background: white; border-radius: 3px; border: 1px solid rgb(136, 136, 136); left: 50%; top: -40px; width: 34px; height: 20px; text-align: center; color: rgb(51, 51, 51); line-height: 20px; font-size: 12px; margin-left: -18px; display: block; visibility: hidden; position: absolute; opacity: 0; -webkit-transition-duration: 200ms, 200ms, 0; -moz-transition-duration: 200ms, 200ms, 0; -ms-transition-duration: 200ms, 200ms, 0; transition-duration: 200ms, 200ms, 0; -webkit-transition-property: opacity, top, visibility; -moz-transition-property: opacity, top, visibility; -ms-transition-property: opacity, top, visibility; transition-property: opacity, top, visibility; -webkit-transition-delay: 0, 0, 200ms; -moz-transition-delay: 0, 0, 200ms; -ms-transition-delay: 0, 0, 200ms; transition-delay: 0, 0, 200ms;
+}
+.ui-slider-float .ui-slider-handle:hover .ui-slider-tip {
+	top: -30px; visibility: visible; opacity: 1; -webkit-transition-delay: 200ms, 200ms, 0; -moz-transition-delay: 200ms, 200ms, 0; -ms-transition-delay: 200ms, 200ms, 0; transition-delay: 200ms, 200ms, 0;
+}
+.ui-slider-float .ui-slider-handle:focus .ui-slider-tip {
+	top: -30px; visibility: visible; opacity: 1; -webkit-transition-delay: 200ms, 200ms, 0; -moz-transition-delay: 200ms, 200ms, 0; -ms-transition-delay: 200ms, 200ms, 0; transition-delay: 200ms, 200ms, 0;
+}
+.ui-slider-float .ui-slider-pip:hover .ui-slider-tip-label {
+	top: -30px; visibility: visible; opacity: 1; -webkit-transition-delay: 200ms, 200ms, 0; -moz-transition-delay: 200ms, 200ms, 0; -ms-transition-delay: 200ms, 200ms, 0; transition-delay: 200ms, 200ms, 0;
+}
+.ui-slider-float .ui-slider-pip .ui-slider-tip-label {
+	top: 42px;
+}
+.ui-slider-float .ui-slider-pip:hover .ui-slider-tip-label {
+	top: 32px; font-weight: normal;
+}
+.ui-slider-float .ui-slider-tip::after {
+	border-width: 5px; border-style: solid; border-color: rgba(255, 255, 255, 1) rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); left: 50%; width: 0px; height: 0px; bottom: -10px; margin-left: -5px; position: absolute; content: " ";
+}
+.ui-slider-float .ui-slider-pip .ui-slider-tip-label::after {
+	border-width: 5px; border-style: solid; border-color: rgba(255, 255, 255, 1) rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); left: 50%; width: 0px; height: 0px; bottom: -10px; margin-left: -5px; position: absolute; content: " ";
+}
+.ui-slider-float .ui-slider-tip::before {
+	border-width: 5px; border-style: solid; border-color: rgb(136, 136, 136) rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); left: 50%; width: 0px; height: 0px; bottom: -11px; margin-left: -5px; position: absolute; content: " ";
+}
+.ui-slider-float .ui-slider-pip .ui-slider-tip-label::before {
+	border-width: 5px; border-style: solid; border-color: rgb(136, 136, 136) rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); left: 50%; width: 0px; height: 0px; bottom: -11px; margin-left: -5px; position: absolute; content: " ";
+}
+.ui-slider-float .ui-slider-pip .ui-slider-tip-label::after {
+	border-width: 5px; border-style: solid; border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgba(255, 255, 255, 1); top: -10px;
+}
+.ui-slider-float .ui-slider-pip .ui-slider-tip-label::before {
+	border-width: 5px; border-style: solid; border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgb(136, 136, 136); top: -11px;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-tip {
+	left: -60px; top: 50%; width: 34px; color: rgb(51, 51, 51); margin-top: -11px; margin-left: 0px; -webkit-transition-duration: 200ms, 200ms, 0; -moz-transition-duration: 200ms, 200ms, 0; -ms-transition-duration: 200ms, 200ms, 0; transition-duration: 200ms, 200ms, 0; -webkit-transition-property: opacity, left, visibility; -moz-transition-property: opacity, left, visibility; -ms-transition-property: opacity, left, visibility; transition-property: opacity, left, visibility; -webkit-transition-delay: 0, 0, 200ms; -moz-transition-delay: 0, 0, 200ms; -ms-transition-delay: 0, 0, 200ms; transition-delay: 0, 0, 200ms;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-tip-label {
+	left: -60px; top: 50%; width: 34px; color: rgb(51, 51, 51); margin-top: -11px; margin-left: 0px; -webkit-transition-duration: 200ms, 200ms, 0; -moz-transition-duration: 200ms, 200ms, 0; -ms-transition-duration: 200ms, 200ms, 0; transition-duration: 200ms, 200ms, 0; -webkit-transition-property: opacity, left, visibility; -moz-transition-property: opacity, left, visibility; -ms-transition-property: opacity, left, visibility; transition-property: opacity, left, visibility; -webkit-transition-delay: 0, 0, 200ms; -moz-transition-delay: 0, 0, 200ms; -ms-transition-delay: 0, 0, 200ms; transition-delay: 0, 0, 200ms;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-handle:hover .ui-slider-tip {
+	left: -50px; top: 50%; margin-top: -11px;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-handle:focus .ui-slider-tip {
+	left: -50px; top: 50%; margin-top: -11px;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-pip:hover .ui-slider-tip-label {
+	left: -50px; top: 50%; margin-top: -11px;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-pip .ui-slider-tip-label {
+	left: 47px;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-pip:hover .ui-slider-tip-label {
+	left: 37px;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-tip::after {
+	border-width: 5px; border-style: solid; border-color: transparent rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgba(255, 255, 255, 1); left: auto; top: auto; right: -10px; bottom: 50%; margin-bottom: -5px; margin-left: 0px; position: absolute;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-pip .ui-slider-tip-label::after {
+	border-width: 5px; border-style: solid; border-color: transparent rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgba(255, 255, 255, 1); left: auto; top: auto; right: -10px; bottom: 50%; margin-bottom: -5px; margin-left: 0px; position: absolute;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-tip::before {
+	border-width: 5px; border-style: solid; border-color: transparent rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgb(136, 136, 136); left: auto; top: auto; right: -11px; bottom: 50%; margin-bottom: -5px; margin-left: 0px; position: absolute;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-pip .ui-slider-tip-label::before {
+	border-width: 5px; border-style: solid; border-color: transparent rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgb(136, 136, 136); left: auto; top: auto; right: -11px; bottom: 50%; margin-bottom: -5px; margin-left: 0px; position: absolute;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-pip .ui-slider-tip-label::after {
+	border-width: 5px; border-style: solid; border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 1) rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); left: -10px; right: auto;
+}
+.ui-slider-float.ui-slider-vertical .ui-slider-pip .ui-slider-tip-label::before {
+	border-width: 5px; border-style: solid; border-color: rgba(255, 255, 255, 0) rgb(136, 136, 136) rgba(255, 255, 255, 0) rgba(255, 255, 255, 0); left: -11px; right: auto;
+}
+.ui-slider-pips .ui-slider-pip-selected-initial {
+	color: rgb(20, 202, 130); font-weight: bold;
+}
+.ui-slider-pips .ui-slider-pip-selected-initial-first {
+	color: rgb(20, 202, 130); font-weight: bold;
+}
+.ui-slider-pips .ui-slider-pip-selected-initial-second {
+	color: rgb(20, 202, 130); font-weight: bold;
+}
+.ui-slider-pips .ui-slider-pip-selected-initial {
+	
+}
+.ui-slider-pips .ui-slider-pip-selected-initial-first {
+	
+}
+.ui-slider-pips .ui-slider-pip-selected-initial-second {
+	color: rgb(24, 151, 201);
+}
+.ui-slider-pips .ui-slider-pip-selected {
+	color: rgb(255, 122, 0); font-weight: bold;
+}
+.ui-slider-pips .ui-slider-pip-selected-first {
+	color: rgb(255, 122, 0); font-weight: bold;
+}
+.ui-slider-pips .ui-slider-pip-selected-second {
+	color: rgb(255, 122, 0); font-weight: bold;
+}
+.ui-slider-pips .ui-slider-pip-selected {
+	
+}
+.ui-slider-pips .ui-slider-pip-selected-first {
+	
+}
+.ui-slider-pips .ui-slider-pip-selected-second {
+	color: rgb(231, 0, 129);
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+						http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+
+	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<beans:property name="url" value="jdbc:mysql://localhost:3306/rnr" />
+		<beans:property name="username" value="root" />
+		<beans:property name="password" value="welcome" />
+		<beans:property name="validationQuery" value="select 1" />
+	</beans:bean>
+	
+	<beans:bean id="commonBean" class="com.cgi.controllers.CommonBean">
+	</beans:bean>
+
+	<beans:bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="packagesToScan">
+			<beans:list>
+				<beans:value>cgi.rnr.awards</beans:value>
+				<beans:value>cgi.rnr.common</beans:value>
+				<beans:value>cgi.rnr.company</beans:value>
+				<beans:value>cgi.rnr.projects</beans:value>
+				<beans:value>cgi.rnr.security</beans:value>
+				<beans:value>cgi.rnr.workflow</beans:value>
+				<beans:value>com.cgi.member</beans:value>
+				<beans:value>com.cgi.nomination</beans:value>
+				<beans:value>com.cgi.panel</beans:value>
+			</beans:list>
+		</beans:property>
+		<beans:property name="hibernateProperties">
+			<beans:props>
+				<beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
+				</beans:prop>
+				<beans:prop key="hibernate.show_sql">true</beans:prop>
+				<beans:prop key="hibernate.format_sql">false</beans:prop>
+				<beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop>
+			</beans:props>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+	</beans:bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<annotation-driven />
+	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/WEB-INF/views/**" location="/views/" />
+	<context:component-scan base-package="com.cgi.controllers" />
+
+	<beans:bean id="rnrDAO" class="com.cgi.dao.RNRDAOImpl" />
+	<beans:bean id="rnrService" class="com.cgi.service.RNRServiceImpl" />
+
+	<context:property-placeholder location="classpath:ldap.properties" />
+</beans:beans>
