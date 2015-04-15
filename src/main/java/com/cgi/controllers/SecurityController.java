@@ -917,5 +917,6 @@ public class SecurityController {
 		}
 		return new CommonBean().getObjectsForJSON(session, request, rnrService, "Nomination", "projectName");
 	}
+	//for reporting purpose
 
 }
