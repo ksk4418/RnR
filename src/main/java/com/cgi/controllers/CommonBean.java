@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.LoggerFactory;
@@ -48,8 +49,8 @@ public class CommonBean {
 	public boolean isSessionExpired(HttpSession session) {
 		if (Utils.stringEqual((String) session.getAttribute("sessionId"),
 				session.getId()))
-			return true;
-		return false;
+			return false;
+		return true;
 
 	}
 

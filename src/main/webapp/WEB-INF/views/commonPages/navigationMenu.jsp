@@ -65,6 +65,7 @@
 										</ul>
 									</li>
 								</c:if>
+								<li><a href="ReportGWT.cgi">Report</a></li> 
 <!-- 									<li><a href="nominatationWizard.cgi">Nomination</a></li> -->
 <!-- 									<li><a href="searchAwards.cgi">Search Awards</a></li> -->
 <!-- 									<li><a href="test.cgi">test</a></li> -->
