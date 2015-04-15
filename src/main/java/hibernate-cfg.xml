@@ -6,9 +6,9 @@
 	<session-factory>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost/rnr</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/rnr</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">welcome</property>
+		<property name="connection.password">root</property>
 		<property name="show_sql">true</property>
 		<property name="hibernate.current_session_context_class">org.hibernate.context.ThreadLocalSessionContext</property>
 		<property name="current_session_context_class">thread</property>

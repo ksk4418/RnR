@@ -45,7 +45,7 @@ public class CommonController {
 		return commonBean.getObjectsForJSON(session,
 				request, rnrService, "Frequency", "frequencyName");
 	}
-
+	
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/insertUpdateFrequency.cgi", method = RequestMethod.POST)
 	public String insertUpdateFrequency(Locale locale, Model model,
@@ -412,4 +412,5 @@ public class CommonController {
 		return "commonPages/ajaxCallResponse";
 	}
 
+	
 }
