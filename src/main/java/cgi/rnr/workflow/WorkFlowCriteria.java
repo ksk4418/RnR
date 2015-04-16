@@ -8,11 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 @Entity(name = "WORKFLOWCRITERIA")
+@Table(name = "WORKFLOWCRITERIA", uniqueConstraints = { @UniqueConstraint(columnNames = { "CRITERIA_NM","WORKFLOW_ID" }) })
 public class WorkFlowCriteria implements Serializable {
 
 	private static final long serialVersionUID = 1L;

@@ -12,9 +12,10 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 @Entity(name = "NominationForm")
-@Table(name = "NOMINATION_DATA")
+@Table(name = "NOMINATION_DATA" , uniqueConstraints = { @UniqueConstraint(columnNames = { "NOM_ID" }) })
 public class NominationForm implements Serializable {
 
 	private static final long serialVersionUID = 5787025614310276894L;

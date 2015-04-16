@@ -9,11 +9,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 @Entity(name = "Nomination")
+@Table(name = "Nomination", uniqueConstraints = { @UniqueConstraint(columnNames = { "NOMINATED_BY","EMPLOYEE_ID" }) })
 public class Nomination implements Serializable {
 
 	private static final long serialVersionUID = -5470027388009456869L;

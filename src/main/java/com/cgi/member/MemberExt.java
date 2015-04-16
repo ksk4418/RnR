@@ -13,9 +13,10 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 @Entity(name="MemberExt")
-@Table(name = "RMG_DATA_EXT")
+@Table(name = "RMG_DATA_EXT" , uniqueConstraints = { @UniqueConstraint(columnNames = { "RM_ID","EMPL_ID" }) })
 public class MemberExt implements Serializable {
 
 	private static final long serialVersionUID = 1L;
