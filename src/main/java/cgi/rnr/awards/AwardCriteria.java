@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
 @Entity(name = "AwardCriteria")
-@Table(name = "AwardCriteria", uniqueConstraints = { @UniqueConstraint(columnNames = { "CRITERIA_NM" }) })
+@Table(name = "AwardCriteria", uniqueConstraints = { @UniqueConstraint(columnNames = { "AWARD_ID" }) })
 public class AwardCriteria implements Serializable {
 
 	private static final long serialVersionUID = 1L;

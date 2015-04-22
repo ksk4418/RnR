@@ -241,15 +241,15 @@ public class AwardsController {
 						.getParameter(Constants.ACTVFL)) ? 'Y' : 'N');
 				award.setAwardDesc(request.getParameter(Constants.AWARDDESC));
 				award.setAwardName(request.getParameter(Constants.AWARDNM));
-				award.setFrequencyId(Integer.parseInt(request
-						.getParameter("frequency")));
+				award.setFrequencyId(request.getParameter("frequency").isEmpty()? 0 : 
+							Integer.parseInt(request.getParameter("frequency")));
 				award.setLastUpdateDate(new Date());
 				award.setLastUpdateUID((String) session.getAttribute("UID"));
 				award.setRowVersionNumber(1);
-				award.setAwardType(Integer.parseInt(request
-						.getParameter("awardTypeId")));
-				award.setMinimumRole(Integer.parseInt(request
-						.getParameter("minRoleId")));
+				award.setAwardType(request.getParameter("awardTypeId").isEmpty()? 0 : 
+							Integer.parseInt(request.getParameter("awardTypeId")));
+				award.setMinimumRole(request.getParameter("minRoleId").isEmpty()? 0 : 
+							Integer.parseInt(request.getParameter("minRoleId")));
 
 				if (award.getAwardName() == null || award.getAwardType() == 0
 						|| award.getAwardName().trim().length() == 0) {
@@ -272,19 +272,19 @@ public class AwardsController {
 				Award award = new Award();
 				award.setActiveFl("true".equalsIgnoreCase(request
 						.getParameter(Constants.ACTVFL)) ? 'Y' : 'N');
-				award.setId(Long.parseLong(request.getParameter("id")
-						.toString().trim()));
+				award.setId(request.getParameter("id").toString().trim().isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("id").toString().trim()));
 				award.setAwardDesc(request.getParameter(Constants.AWARDDESC));
 				award.setAwardName(request.getParameter(Constants.AWARDNM));
-				award.setFrequencyId(Integer.parseInt(request
-						.getParameter("frequency")));
+				award.setFrequencyId(request.getParameter("frequency").isEmpty()? 0 : 
+							Integer.parseInt(request.getParameter("frequency")));
 				award.setLastUpdateDate(new Date());
 				award.setLastUpdateUID((String) session.getAttribute("UID"));
 				award.setRowVersionNumber(1);
-				award.setAwardType(Integer.parseInt(request
-						.getParameter("awardTypeId")));
-				award.setMinimumRole(Integer.parseInt(request
-						.getParameter("minRoleId")));
+				award.setAwardType(request.getParameter("awardTypeId").isEmpty()? 0 : 
+							Integer.parseInt(request.getParameter("awardTypeId")));
+				award.setMinimumRole(request.getParameter("minRoleId").isEmpty()? 0 : 
+							Integer.parseInt(request.getParameter("minRoleId")));
 
 				rnrService.update(award);
 				model.addAttribute(Constants.RESPONSETEXT,
@@ -297,8 +297,7 @@ public class AwardsController {
 				Award award = new Award();
 				award.setActiveFl("true".equalsIgnoreCase(request
 						.getParameter(Constants.ACTVFL)) ? 'Y' : 'N');
-				award.setId(Long.parseLong(request.getParameter("id")
-						.toString().trim()));
+				award.setId(Long.parseLong(request.getParameter("id").toString().trim()));
 				award.setAwardDesc(request.getParameter(Constants.AWARDDESC));
 				award.setAwardName(request.getParameter(Constants.AWARDNM));
 				award.setFrequencyId(Integer.parseInt(request
@@ -349,8 +348,8 @@ public class AwardsController {
 						.getParameter("awardGroupDesc"));
 				awardGroup.setAwardGroupName(request
 						.getParameter(Constants.AWARDGRPNM));
-				awardGroup.setAwardId(Long.parseLong(request
-						.getParameter("awardId")));
+				awardGroup.setAwardId(request.getParameter("awardId").isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("awardId")));
 				awardGroup.setLastUpdateDate(new Date());
 				awardGroup.setLastUpdateUID((String) session
 						.getAttribute("UID"));
@@ -383,14 +382,14 @@ public class AwardsController {
 						.getParameter("awardGroupDesc"));
 				awardGroup.setAwardGroupName(request
 						.getParameter(Constants.AWARDGRPNM));
-				awardGroup.setAwardId(Long.parseLong(request
-						.getParameter("awardId")));
+				awardGroup.setAwardId(request.getParameter("awardId").isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("awardId")));
 				awardGroup.setLastUpdateDate(new Date());
 				awardGroup.setLastUpdateUID((String) session
 						.getAttribute("UID"));
 				awardGroup.setRowVersionNumber(1);
-				awardGroup.setId(Long.parseLong(request.getParameter("id")
-						.trim()));
+				awardGroup.setId(request.getParameter("id").trim().isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("id").trim()));
 				rnrService.update(awardGroup);
 				model.addAttribute(Constants.RESPONSETEXT,
 						"Award Group updated successfully");
@@ -436,6 +435,7 @@ public class AwardsController {
 			model.addAttribute(Constants.RESPONSETEXT, Constants.SESSIONEXP);
 			return Constants.AJAXRESP;
 		}
+	
 		try {
 			if (request.getParameter(Constants.ACTION) == null) {
 				model.addAttribute(Constants.RESPONSETEXT,
@@ -445,17 +445,16 @@ public class AwardsController {
 			if ("1".equalsIgnoreCase(request.getParameter(Constants.ACTION))) { // Action
 				// Add
 				AwardElig award = new AwardElig();
-				award.setAwardId(Long.parseLong(request.getParameter("awardId")));
+				award.setAwardId(request.getParameter("awardId").isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("awardId")));
 				award.setDescription(request.getParameter(Constants.AWARDDESC));
-				award.setTitleGroup(Integer.parseInt(request
-						.getParameter("titleGroup")));
+				award.setTitleGroup(request.getParameter("titleGroup").isEmpty()? 0 : 
+							Integer.parseInt(request.getParameter("titleGroup")));
 				award.setLastUpdateDate(new Date());
 				award.setLastUpdateUID((String) session.getAttribute("UID"));
 				award.setRowVersionNumber(1);
 
-				if (award.getTitleGroup() == 0 || award.getAwardId() == 0
-						|| award.getDescription() == null
-						|| award.getDescription().trim().length() == 0) {
+				if (award.getTitleGroup() == 0 || award.getAwardId() == 0) {
 					model.addAttribute(Constants.RESPONSETEXT,
 							"Error: Award eligibility and award type are mandatory fields");
 					return Constants.AJAXRESP;
@@ -476,14 +475,16 @@ public class AwardsController {
 					.getParameter(Constants.ACTION))) { // action
 				// Edit
 				AwardElig award = new AwardElig();
-				award.setAwardId(Long.parseLong(request.getParameter("awardId")));
+				award.setAwardId(request.getParameter("awardId").isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("awardId")));
 				award.setDescription(request.getParameter(Constants.AWARDDESC));
-				award.setTitleGroup(Integer.parseInt(request
-						.getParameter("titleGroup")));
+				award.setTitleGroup(request.getParameter("titleGroup").isEmpty()? 0 : 
+							Integer.parseInt(request.getParameter("titleGroup")));
 				award.setLastUpdateDate(new Date());
 				award.setLastUpdateUID((String) session.getAttribute("UID"));
 				award.setRowVersionNumber(1);
-				award.setId(Integer.parseInt(request.getParameter("id").trim()));
+				award.setId(request.getParameter("id").trim().isEmpty()? 0 : 
+					Integer.parseInt(request.getParameter("id").trim()));
 				rnrService.update(award);
 				model.addAttribute(Constants.RESPONSETEXT,
 						"Award Eligibility updated successfully");
@@ -538,41 +539,59 @@ public class AwardsController {
 						.getParameter(Constants.ACTVFL)) ? 'Y' : 'N');
 				awardCriteria.setAwardCriteriaDesc(request
 						.getParameter("awardCriteriaDesc"));
+				
 				awardCriteria.setAwardCriteriaName(request
 						.getParameter(Constants.CRITERIANM));
-				awardCriteria.setAwardId(Long.parseLong(request
-						.getParameter("awardId")));
-				awardCriteria.setCityId(Long.parseLong(request
-						.getParameter("cityId")));
-				awardCriteria.setCompanyId(Long.parseLong(request
-						.getParameter("companyId")));
-				awardCriteria.setContinentId(Long.parseLong(request
-						.getParameter("continentId")));
-				awardCriteria.setCountryId(Long.parseLong(request
-						.getParameter("countryId")));
-				awardCriteria.setLocationId(Long.parseLong(request
-						.getParameter("locationId")));
-				awardCriteria.setProjectId(Long.parseLong(request
-						.getParameter("projectId")));
-				awardCriteria.setStateId(Long.parseLong(request
-						.getParameter("stateId")));
-				awardCriteria.setSubCityId(Long.parseLong(request
-						.getParameter("subCityId")));
-				awardCriteria.setVerticalId(Long.parseLong(request
-						.getParameter("verticalId")));
-				awardCriteria.setQuotaAlinedToRole(Integer.parseInt(request
-						.getParameter("quotaAlinedToRole")));
-				awardCriteria.setQuotaPercentage(Float.parseFloat(request
-						.getParameter("quotaPercentage")));
+				
+				awardCriteria.setAwardId(request.getParameter("awardId").isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("awardId")));
+				
+				awardCriteria.setCityId(request.getParameter("cityId").isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("cityId")));
+				
+				awardCriteria.setCompanyId(request.getParameter("companyId").isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("companyId")));
+				
+				awardCriteria.setContinentId(request.getParameter("continentId").isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("continentId")));
+				
+				awardCriteria.setCountryId(request.getParameter("countryId").isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("countryId")));
+				
+				awardCriteria.setLocationId(request.getParameter("locationId").isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("locationId")));
+				
+				awardCriteria.setProjectId(request.getParameter("projectId").isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("projectId")));
+				
+				awardCriteria.setStateId(request.getParameter("stateId").isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("stateId")));
+				
+				awardCriteria.setSubCityId(request.getParameter("subCityId").isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("subCityId")));
+				
+				awardCriteria.setVerticalId(request.getParameter("verticalId").isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("verticalId")));
+				
+				awardCriteria.setQuotaAlinedToRole(request.getParameter("quotaAlinedToRole").isEmpty()? 0 : 
+					Integer.parseInt(request.getParameter("quotaAlinedToRole")));
+				
+				awardCriteria.setQuotaPercentage(request.getParameter("quotaPercentage").isEmpty()? 0.0f : 
+					Float.parseFloat(request.getParameter("quotaPercentage")));
+				
+				
 				awardCriteria.setQuotaQuantity(Integer
 						.parseInt(request.getParameter("quotaQuantity").trim()
 								.length() == 0 ? "0" : request
 								.getParameter("quotaQuantity")));
-
+				
 				awardCriteria.setLastUpdateDate(new Date());
+				
 				awardCriteria.setLastUpdateUID((String) session
 						.getAttribute("UID"));
+				
 				awardCriteria.setRowVersionNumber(1);
+				
 
 				if (awardCriteria.getAwardCriteriaName() == null
 						|| awardCriteria.getAwardCriteriaName().trim().length() == 0
@@ -606,33 +625,47 @@ public class AwardsController {
 						.getParameter("awardCriteriaDesc"));
 				awardCriteria.setAwardCriteriaName(request
 						.getParameter(Constants.CRITERIANM));
-				awardCriteria.setAwardId(Long.parseLong(request
-						.getParameter("awardId")));
-				awardCriteria.setCityId(Long.parseLong(request
-						.getParameter("cityId")));
-				awardCriteria.setCompanyId(Long.parseLong(request
-						.getParameter("companyId")));
-				awardCriteria.setContinentId(Long.parseLong(request
-						.getParameter("continentId")));
-				awardCriteria.setCountryId(Long.parseLong(request
-						.getParameter("countryId")));
-				awardCriteria.setLocationId(Long.parseLong(request
-						.getParameter("locationId")));
-				awardCriteria.setProjectId(Long.parseLong(request
-						.getParameter("projectId")));
-				awardCriteria.setStateId(Long.parseLong(request
-						.getParameter("stateId")));
-				awardCriteria.setSubCityId(Long.parseLong(request
-						.getParameter("subCityId")));
-				awardCriteria.setVerticalId(Long.parseLong(request
-						.getParameter("verticalId")));
-				awardCriteria.setQuotaAlinedToRole(Integer.parseInt(request
-						.getParameter("quotaAlinedToRole")));
-				awardCriteria.setQuotaPercentage(Float.parseFloat(request
-						.getParameter("quotaPercentage")));
-				awardCriteria.setQuotaQuantity(Integer.parseInt(request
-						.getParameter("quotaQuantity")));
-				awardCriteria.setId(Long.parseLong(request.getParameter("id")));
+				awardCriteria.setAwardId(request.getParameter("awardId").isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("awardId")));
+		
+		awardCriteria.setCityId(request.getParameter("cityId").isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("cityId")));
+		
+		awardCriteria.setCompanyId(request.getParameter("companyId").isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("companyId")));
+		
+		awardCriteria.setContinentId(request.getParameter("continentId").isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("continentId")));
+		
+		awardCriteria.setCountryId(request.getParameter("countryId").isEmpty()? 0L : 
+			Long.parseLong(request.getParameter("countryId")));
+		
+		awardCriteria.setLocationId(request.getParameter("locationId").isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("locationId")));
+		
+		awardCriteria.setProjectId(request.getParameter("projectId").isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("projectId")));
+		
+		awardCriteria.setStateId(request.getParameter("stateId").isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("stateId")));
+		
+		awardCriteria.setSubCityId(request.getParameter("subCityId").isEmpty()? 0L : 
+			Long.parseLong(request.getParameter("subCityId")));
+		
+		awardCriteria.setVerticalId(request.getParameter("verticalId").isEmpty()? 0L : 
+			Long.parseLong(request.getParameter("verticalId")));
+		
+		awardCriteria.setQuotaAlinedToRole(request.getParameter("quotaAlinedToRole").isEmpty()? 0 : 
+			Integer.parseInt(request.getParameter("quotaAlinedToRole")));
+		
+				awardCriteria.setQuotaPercentage(request.getParameter("quotaPercentage").isEmpty()? 0.0f : 
+					Float.parseFloat(request.getParameter("quotaPercentage")));
+				
+				awardCriteria.setQuotaQuantity(request.getParameter("quotaQuantity").isEmpty()? 0 : 
+							Integer.parseInt(request.getParameter("quotaQuantity")));
+				
+				awardCriteria.setId(request.getParameter("id").trim().isEmpty()? 0L : 
+					Long.parseLong(request.getParameter("id").trim()));
 
 				awardCriteria.setLastUpdateDate(new Date());
 				awardCriteria.setLastUpdateUID((String) session
@@ -674,8 +707,7 @@ public class AwardsController {
 						.getParameter("verticalId")));
 				awardCriteria.setQuotaAlinedToRole(Integer.parseInt(request
 						.getParameter("quotaAlinedToRole")));
-				awardCriteria.setQuotaPercentage(Float.parseFloat(request
-						.getParameter("quotaPercentage")));
+				awardCriteria.setQuotaPercentage(request.getParameter("quotaPercentage").isEmpty()? 0.0f : Float.parseFloat(request.getParameter("quotaPercentage")));
 				awardCriteria.setQuotaQuantity(Integer.parseInt(request
 						.getParameter("quotaQuantity")));
 				awardCriteria.setId(Long.parseLong(request.getParameter("id")));
@@ -720,38 +752,51 @@ public class AwardsController {
 				AwardGroupExt awardGroupExt = new AwardGroupExt();
 				awardGroupExt.setAwardGroupExtName(request
 						.getParameter("awardGroupExtName"));
+				System.out.println("set award group ext name");
 				awardGroupExt.setAwardGroupName(request
 						.getParameter("awardGroupId"));
+				System.out.println("set award group name");
 				awardGroupExt.setCloseNominations("true"
 						.equalsIgnoreCase(request
 								.getParameter("closeNominations")) ? 'Y' : 'N');
+				System.out.println("set close nominaiton");
 				awardGroupExt.setClosePanelGroupReviews("true"
 						.equalsIgnoreCase(request
 								.getParameter("closePanelGroupReviews")) ? 'Y'
 						: 'N');
+				System.out.println("set close panel group reviews");
 				awardGroupExt.setDisplayMessage(request
 						.getParameter("dispMessage"));
+				System.out.println("setdisplay message");
 				awardGroupExt.setFy(request.getParameter("fy"));
+				System.out.println("set fy");
 				awardGroupExt.setOpenForNominations("true"
 						.equalsIgnoreCase(request
 								.getParameter("openForNominations")) ? 'Y'
 						: 'N');
+				System.out.println("set open for nomination");
 				awardGroupExt.setOpenPanelGroupReviews("true"
 						.equalsIgnoreCase(request
 								.getParameter("openPanelGroupReviews")) ? 'Y'
 						: 'N');
+				System.out.println("set open panel group reviews");
 				awardGroupExt.setPublish("true".equalsIgnoreCase(request
 						.getParameter("publish")) ? 'Y' : 'N');
-				awardGroupExt.setQtrId(Long.parseLong(request
-						.getParameter("qtrId")));
+				System.out.println("setpublish");
+				awardGroupExt.setQtrId(request.getParameter("qtrId").isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("qtrId")));
+				System.out.println("set quarter id");
 				awardGroupExt.setLastUpdateDate(new Date());
+				System.out.println("set last update date");
 				awardGroupExt.setLastUpdateUID((String) session
 						.getAttribute("UID"));
+				System.out.println("set last update uid");
 				awardGroupExt.setRowVersionNumber(1);
+				System.out.println("set row inversion number");
 
 				if (awardGroupExt.getAwardGroupName() == null
 						|| awardGroupExt.getQtrId() == 0
-						|| awardGroupExt.getFy() == null) {
+						|| awardGroupExt.getFy() == null || awardGroupExt.getFy().trim().length()==0) {
 					model.addAttribute(Constants.RESPONSETEXT,
 							"Error: Award Group ID, Quarter and FY are mandatory fields");
 					return Constants.AJAXRESP;
@@ -800,14 +845,14 @@ public class AwardsController {
 						: 'N');
 				awardGroupExt.setPublish("true".equalsIgnoreCase(request
 						.getParameter("publish")) ? 'Y' : 'N');
-				awardGroupExt.setQtrId(Long.parseLong(request
-						.getParameter("qtrId")));
+				awardGroupExt.setQtrId(request.getParameter("qtrId").isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("qtrId")));
 				awardGroupExt.setLastUpdateDate(new Date());
 				awardGroupExt.setLastUpdateUID((String) session
 						.getAttribute("UID"));
 				awardGroupExt.setRowVersionNumber(1);
-				awardGroupExt.setId(Long.parseLong(request.getParameter("id")
-						.trim()));
+				awardGroupExt.setId(request.getParameter("id").trim().isEmpty()? 0L : 
+							Long.parseLong(request.getParameter("id").trim()));
 				rnrService.update(awardGroupExt);
 				model.addAttribute(Constants.RESPONSETEXT,
 						"Award Group Ext updated successfully");

@@ -15,7 +15,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
 @Entity(name = "AwardGroupExt")
-@Table(name = "AwardGroupExt", uniqueConstraints = { @UniqueConstraint(columnNames = { "GRP_NM","QTR_ID" }) })
+@Table(name = "AwardGroupExt", uniqueConstraints = { @UniqueConstraint(columnNames = {"GRP_NM","FY","QTR_ID" }) })
 public class AwardGroupExt implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -50,7 +50,7 @@ public class AwardGroupExt implements Serializable {
 	private char publish = 'N';
 
 	@Column(name = "FY", length = 4, nullable = false)
-	private String fy = "2015";
+	private String fy="2015";
 
 	@Column(name = "QTR_ID", length = 20, nullable = false)
 	private long qtrId = 1;
