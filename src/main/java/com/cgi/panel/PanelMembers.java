@@ -8,12 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 @SuppressWarnings("serial")
 @Entity(name = "PanelMembers")
+@Table(name = "PanelMembers", uniqueConstraints = { @UniqueConstraint(columnNames = { "MEMBER_UID","PANEL_ID" }) })
 public class PanelMembers implements Serializable {
    @Id
    @TableGenerator(name = "panelMemberId", table = "UNID", pkColumnName = "unidKey", pkColumnValue = "panelMemberId", allocationSize = 1)

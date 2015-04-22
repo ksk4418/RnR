@@ -300,7 +300,7 @@
 		        	<td><input type="text" name="ide" id="ide" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 					<td><label for="accessNamee">Role Name</label></td>
 					<td>
-						<select id="accessNamee" name="accessNamee">
+						<select id="accessNamee" name="accessNamee" disabled="disabled">
 						  <c:if test="${not empty Roles}">
 								<c:forEach var="listValue" items="${Roles}">
 									<option value="${listValue.roleName}">${listValue.roleName }</option>
@@ -344,7 +344,7 @@
 		        	<td><input type="text" name="idd" id="idd" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 					<td><label for="accessNamed">Role Name</label></td>
 					<td>
-						<select id="accessNamed" name="accessNamed">
+						<select id="accessNamed" name="accessNamed" disabled="disabled">
 						  <c:if test="${not empty Roles}">
 								<c:forEach var="listValue" items="${Roles}">
 									<option value="${listValue.roleName}">${listValue.roleName }</option>
@@ -356,7 +356,7 @@
 		        <tr>
 					<td><label for="pageIdd">Page Name</label></td>
 					<td>
-						<select id="pageIdd" name="pageIdd" disabled="disabled">
+						<select id="pageIdd" name="pageIdd" disabled="disabled" >
 						  <c:if test="${not empty Pages}">
 								<c:forEach var="listValue" items="${Pages}">
 									<option value="${listValue.id}">${listValue.pageName }</option>
@@ -365,13 +365,13 @@
 						</select>
 					</td>
    		        	<td><label for="insertFld">Insert Access</label></td>
-		        	<td><input type="checkbox" name="insertFld" id="insertFld" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
+		        	<td><input type="checkbox" name="insertFld" id="insertFld" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        </tr>
 				<tr>
 					<td><label for="updateFld">Update Access</label></td>
-		        	<td><input type="checkbox" name="updateFld" id="updateFld" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
+		        	<td><input type="checkbox" name="updateFld" id="updateFld" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 					<td><label for="deleteFld">Delete Access</label></td>
-		        	<td><input type="checkbox" name="deleteFld" id="deleteFld" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
+		        	<td><input type="checkbox" name="deleteFld" id="deleteFld" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 				</tr>
 			</table>
 

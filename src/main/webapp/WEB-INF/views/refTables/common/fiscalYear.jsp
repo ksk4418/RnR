@@ -264,7 +264,7 @@
 		        	<td><label for="ide">FY ID</label></td>
 		        	<td><input type="text" name="ide" id="ide" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 					<td><label for="FYe">Fiscal Year</label></td>
-					<td><input type="text" name="FYe" id="FYe" class="text ui-widget-content ui-corner-all"></td>
+					<td><input type="text" name="FYe" id="FYe" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 		        </tr>
 		        <tr>
 		        	<td><label for="opene">Open</label></td>
@@ -288,7 +288,7 @@
 		        	<td><label for="idd">FY ID</label></td>
 		        	<td><input type="text" name="idd" id="idd" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 					<td><label for="FYd">Fiscal Year</label></td>
-					<td><input type="text" name="FYd" id="FYd" class="text ui-widget-content ui-corner-all"></td>
+					<td><input type="text" name="FYd" id="FYd" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 		        </tr>
 		        <tr>
 		        	<td><label for="opend">Open</label></td>

@@ -355,7 +355,7 @@
 			<table id="grid-keep-selection" class="table table-condensed table-hover table-striped">
 				<tr>
 					<td><label for="awardGroupExtNamee">Group extended Id</label></td>
-					<td><input type="text" name="ide" id="ide" class="text ui-widget-content ui-corner-all" ></td>
+					<td><input type="text" name="ide" id="ide" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 					<td></td>
 					<td></td>
 				</tr>
@@ -368,7 +368,7 @@
 		        <tr>
 		        	<td><label for="fye">Fiscal year</label></td>
 		        	<td>
-	        	      <select name="fye" id="fye">
+	        	      <select name="fye" id="fye" disabled="disabled">
 						  <c:if test="${not empty FY}">
 								<c:forEach var="listValue" items="${FY}">
 									<option value="${listValue[1]}">${listValue[1] }</option>
@@ -378,7 +378,7 @@
 				    </td>
 		        	<td><label for="qtre">Quarter</label></td>
 		        	<td>
-	        	      <select name="qtre" id="qtre">
+	        	      <select name="qtre" id="qtre" disabled="disabled">
 						  <c:if test="${not empty Quarter}">
 								<c:forEach var="listValue" items="${Quarter}">
 									<option value="${listValue.id}">${listValue.quarterName }</option>
@@ -390,7 +390,7 @@
 		        <tr>
 		        	<td><label for="awardGroupIde">Award Group:</label></td>
 		        	<td>
-	        	      <select name="awardGroupIde" id="awardGroupIde">
+	        	      <select name="awardGroupIde" id="awardGroupIde" disabled="disabled">
 						  <c:if test="${not empty AwardGroup}">
 								<c:forEach var="listValue" items="${AwardGroup}">
 									<option value="${listValue.awardGroupName}">${listValue.awardGroupName }</option>
@@ -425,22 +425,22 @@
 			<table id="grid-keep-selection" class="table table-condensed table-hover table-striped">
 				<tr>
 					<td><label for="awardGroupExtNamed">Group extended Id</label></td>
-					<td><input type="text" name="idd" id="idd" class="text ui-widget-content ui-corner-all" ></td>
+					<td><input type="text" name="idd" id="idd" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 					<td></td>
 					<td></td>
 				</tr>
 		        <tr>
 					<td><label for="awardGroupExtNamed">Group extended Name</label></td>
-					<td><input type="text" name="awardGroupExtNamed" id="awardGroupExtNamed" class="text ui-widget-content ui-corner-all"></td>
+					<td><input type="text" name="awardGroupExtNamed" id="awardGroupExtNamed" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 		        	<td><label for="dispMessaged">Display message:</label></td>
 		        	<td>
-   			        	<input type="text" name="dispMessaged" id="dispMessaged" class="text ui-widget-content ui-corner-all" >
+   			        	<input type="text" name="dispMessaged" id="dispMessaged" class="text ui-widget-content ui-corner-all" readonly="readonly">
    			        </td>
 		        </tr>
 		        <tr>
 		        	<td><label for="fyd">Fiscal year</label></td>
 		        	<td>
-	        	      <select name="fyd" id="fyd">
+	        	      <select name="fyd" id="fyd" disabled="disabled">
 						  <c:if test="${not empty FY}">
 								<c:forEach var="listValue" items="${FY}">
 									<option value="${listValue[1]}">${listValue[1] }</option>
@@ -450,7 +450,7 @@
 				    </td>
 		        	<td><label for="qtrd">Quarter</label></td>
 		        	<td>
-	        	      <select name="qtrd" id="qtrd">
+	        	      <select name="qtrd" id="qtrd" disabled="disabled">
 						  <c:if test="${not empty Quarter}">
 								<c:forEach var="listValue" items="${Quarter}">
 									<option value="${listValue.id}">${listValue.quarterName }</option>
@@ -462,7 +462,7 @@
 		        <tr>
 		        	<td><label for="awardGroupIdd">Award Group:</label></td>
 		        	<td>
-	        	      <select name="awardGroupIdd" id="awardGroupIdd">
+	        	      <select name="awardGroupIdd" id="awardGroupIdd" disabled="disabled">
 						  <c:if test="${not empty AwardGroup}">
 								<c:forEach var="listValue" items="${AwardGroup}">
 									<option value="${listValue.awardGroupName}">${listValue.awardGroupName }</option>
@@ -471,19 +471,19 @@
 				      </select>
 				     </td>
 				    <td><label for="openForNominationsd">Open for Nominations</label></td>
-		        	<td><input type="checkbox" name="openForNominationsd" id="openForNominationsd" class="text ui-widget-content ui-corner-all" ></td>
+		        	<td><input type="checkbox" name="openForNominationsd" id="openForNominationsd" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        </tr>
 		        <tr>
 		        	<td><label for="closeNominationsd">Close Nominations</label></td>
-		        	<td><input type="checkbox" name="closeNominationsd" id="closeNominationsd" class="text ui-widget-content ui-corner-all" ></td>
+		        	<td><input type="checkbox" name="closeNominationsd" id="closeNominationsd" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        	<td><label for="openPanelGroupReviewsd">Open for review</label></td>
-		        	<td><input type="checkbox" name="openPanelGroupReviewsd" id="openPanelGroupReviewsd" class="text ui-widget-content ui-corner-all" ></td>
+		        	<td><input type="checkbox" name="openPanelGroupReviewsd" id="openPanelGroupReviewsd" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        </tr>
 		        <tr>
 		        	<td><label for="closePanelGroupReviewsd">Close reviews</label></td>
-		        	<td><input type="checkbox" name="closePanelGroupReviewsd" id="closePanelGroupReviewsd" class="text ui-widget-content ui-corner-all" ></td>
+		        	<td><input type="checkbox" name="closePanelGroupReviewsd" id="closePanelGroupReviewsd" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        	<td><label for="publishd">Publish results</label></td>
-		        	<td><input type="checkbox" name="publishd" id="publishd" class="text ui-widget-content ui-corner-all" ></td>
+		        	<td><input type="checkbox" name="publishd" id="publishd" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        </tr>
 			</table>
 

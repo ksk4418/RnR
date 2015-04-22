@@ -338,7 +338,7 @@
 		<section class="cgi-rnr-main-content">
 			<div class="container">
 				<div class="row">
-				<h4 align="Center">Award</h4>
+				<h4 align="Center">Work Flow Levels</h4>
 			<table id="grid-keep-selection" class="table table-condensed table-hover table-striped">
 			    <thead>
 			        <tr>
@@ -609,7 +609,7 @@
 		        	<td><label for="ide">Workflow Id: </label></td>
 		            <td><input type="text" name="ide" id="ide" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 					<td><label for="workFlowLevelNamee">Workflow Name</label></td>
-					<td><input type="text" name="workFlowLevelNamee" id="workFlowLevelNamee" class="text ui-widget-content ui-corner-all"></td>
+					<td><input type="text" name="workFlowLevelNamee" id="workFlowLevelNamee" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 		        	<td></td>
 		        	<td></td>
 		        </tr>
@@ -617,7 +617,7 @@
 		        	<td></td><td></td>
 					<td><label for="awardCriteriaIde">Award Criteria</label></td>
 		        	<td>
-		        	      <select name="awardCriteriaIde" id="awardCriteriaIde">
+		        	      <select name="awardCriteriaIde" id="awardCriteriaIde" disabled="disabled">
 						  <c:if test="${not empty AwardCriteria}">
 								<c:forEach var="listValue" items="${AwardCriteria}">
 									<option value="${listValue.id}">${listValue.criteriaName }</option>
@@ -628,7 +628,7 @@
 		        	</td>
 		        	<td><label for="workFlowIde">Workflow</label></td>
 		        	<td>
-   			        	 <select name="workFlowIde" id="workFlowIde">
+   			        	 <select name="workFlowIde" id="workFlowIde" disabled="disabled">
 						  <c:if test="${not empty WorkFlow}">
 								<c:forEach var="listValue" items="${WorkFlow}">
 									<option value="${listValue.id}">${listValue.workFlowName }</option>
@@ -837,9 +837,9 @@
 		        <tr>
 		        	<td></td><td></td>
 		        	<td><label for="idd">Workflow Id: </label></td>
-		            <td><input type="text" name="idd" id="idd" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
+		            <td><input type="text" name="idd" id="idd" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 					<td><label for="workFlowLevelNamed">Workflow Name</label></td>
-					<td><input type="text" name="workFlowLevelNamed" id="workFlowLevelNamed" class="text ui-widget-content ui-corner-all"></td>
+					<td><input type="text" name="workFlowLevelNamed" id="workFlowLevelNamed" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 		        	
    			        <td></td><td></td>
 		        </tr>
@@ -848,7 +848,7 @@
 		        	<td></td>
 					<td><label for="awardCriteriaIdd">Award Criteria</label></td>
 		        	<td>
-		        	      <select name="awardCriteriaIdd" id="awardCriteriaIdd">
+		        	      <select name="awardCriteriaIdd" id="awardCriteriaIdd" disabled="disabled">
 						  <c:if test="${not empty AwardCriteria}">
 								<c:forEach var="listValue" items="${AwardCriteria}">
 									<option value="${listValue.id}">${listValue.criteriaName }</option>
@@ -859,7 +859,7 @@
 		        	</td>
 		        	<td><label for="workFlowIdd">Workflow</label></td>
 		        	<td>
-   			        	 <select name="workFlowIdd" id="workFlowIdd">
+   			        	 <select name="workFlowIdd" id="workFlowIdd" disabled="disabled">
 						  <c:if test="${not empty WorkFlow}">
 								<c:forEach var="listValue" items="${WorkFlow}">
 									<option value="${listValue.id}">${listValue.workFlowName }</option>
@@ -871,10 +871,10 @@
 		        </tr>
      		    <tr>
 		        	<td><label for="Enable1d">Enable Level1</label></td>
-		        	<td><input type="checkbox" name="Enable1d" id="Enable1d" class="text ui-widget-content ui-corner-all" ></td>
+		        	<td><input type="checkbox" name="Enable1d" id="Enable1d" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        	<td><label for="memRole1d">Approver</label></td>
 		        	<td>
-		        	      <select name="memRole1d" id="memRole1d">
+		        	      <select name="memRole1d" id="memRole1d" disabled="disabled">
 							<option value="1">Panel Group</option>
 							<option value="2">RM</option>
 							<option value="3">PM</option>
@@ -887,7 +887,7 @@
 		        	</td>
 		        	<td><label for="panelId1d">Panel Group</label></td>
 		        	<td>
-		        	      <select name="panelId1d" id="panelId1d">
+		        	      <select name="panelId1d" id="panelId1d" disabled="disabled">
 		        	      <option value=0>None</option>
 						  <c:if test="${not empty Panel}">
 								<c:forEach var="listValue" items="${Panel}">
@@ -898,14 +898,14 @@
 					      </select>
 		        	</td>
 		        	<td><label for="emailFlag1d">E-Mail</label></td>
-	        		<td><input type="checkbox" name="emailFlag1d" id="emailFlag1d" class="text ui-widget-content ui-corner-all" ></td>
+	        		<td><input type="checkbox" name="emailFlag1d" id="emailFlag1d" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        </tr>
 		        <tr>
 		        	<td><label for="Enable2d">Enable Level2</label></td>
-		        	<td><input type="checkbox" name="Enable2d" id="Enable2d" class="text ui-widget-content ui-corner-all" ></td>
+		        	<td><input type="checkbox" name="Enable2d" id="Enable2d" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        	<td><label for="memRole2">Approver</label></td>
 		        	<td>
-		        	      <select name="memRole2d" id="memRole2d">
+		        	      <select name="memRole2d" id="memRole2d" disabled="disabled">
 							<option value="1">Panel Group</option>
 							<option value="2">RM</option>
 							<option value="3">PM</option>
@@ -918,7 +918,7 @@
 		        	</td>
 		        	<td><label for="panelId2d">Panel Group</label></td>
 		        	<td>
-		        	      <select name="panelId2d" id="panelId2d">
+		        	      <select name="panelId2d" id="panelId2d" disabled="disabled">
 		        	      <option value=0>None</option>
 						  <c:if test="${not empty Panel}">
 								<c:forEach var="listValue" items="${Panel}">
@@ -929,14 +929,14 @@
 					      </select>
 		        	</td>
 		        	<td><label for="emailFlag2d">E-Mail</label></td>
-	        		<td><input type="checkbox" name="emailFlag2d" id="emailFlag2d" class="text ui-widget-content ui-corner-all" ></td>
+	        		<td><input type="checkbox" name="emailFlag2d" id="emailFlag2d" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        </tr>
        		    <tr>
 		        	<td><label for="Enable3d">Enable Level3</label></td>
-		        	<td><input type="checkbox" name="Enable3d" id="Enable3d" class="text ui-widget-content ui-corner-all" ></td>
+		        	<td><input type="checkbox" name="Enable3d" id="Enable3d" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        	<td><label for="memRole3d">Approver</label></td>
 		        	<td>
-		        	      <select name="memRole3d" id="memRole3d">
+		        	      <select name="memRole3d" id="memRole3d" disabled="disabled">
 							<option value="1">Panel Group</option>
 							<option value="2">RM</option>
 							<option value="3">PM</option>
@@ -949,7 +949,7 @@
 		        	</td>
 		        	<td><label for="panelId3d">Panel Group</label></td>
 		        	<td>
-		        	      <select name="panelId3d" id="panelId3d">
+		        	      <select name="panelId3d" id="panelId3d" disabled="disabled">
 		        	      <option value=0>None</option>
 						  <c:if test="${not empty Panel}">
 								<c:forEach var="listValue" items="${Panel}">
@@ -960,14 +960,14 @@
 					      </select>
 		        	</td>
 		        	<td><label for="emailFlag3d">E-Mail</label></td>
-	        		<td><input type="checkbox" name="emailFlag3d" id="emailFlag3d" class="text ui-widget-content ui-corner-all" ></td>
+	        		<td><input type="checkbox" name="emailFlag3d" id="emailFlag3d" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        </tr>
 		        <tr>
 		        	<td><label for="Enable4d">Enable Level4</label></td>
-		        	<td><input type="checkbox" name="Enable4d" id="Enable4d" class="text ui-widget-content ui-corner-all" ></td>
+		        	<td><input type="checkbox" name="Enable4d" id="Enable4d" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        	<td><label for="memRole4d">Approver</label></td>
 		        	<td>
-		        	      <select name="memRole4d" id="memRole4d">
+		        	      <select name="memRole4d" id="memRole4d" disabled="disabled">
 							<option value="1">Panel Group</option>
 							<option value="2">RM</option>
 							<option value="3">PM</option>
@@ -980,7 +980,7 @@
 		        	</td>
 		        	<td><label for="panelId4d">Panel Group</label></td>
 		        	<td>
-		        	      <select name="panelId4d" id="panelId4d">
+		        	      <select name="panelId4d" id="panelId4d" disabled="disabled">
 		        	      <option value=0>None</option>
 						  <c:if test="${not empty Panel}">
 								<c:forEach var="listValue" items="${Panel}">
@@ -991,14 +991,14 @@
 					      </select>
 		        	</td>
 		        	<td><label for="emailFlag4d">E-Mail</label></td>
-	        		<td><input type="checkbox" name="emailFlag4d" id="emailFlag4d" class="text ui-widget-content ui-corner-all" ></td>
+	        		<td><input type="checkbox" name="emailFlag4d" id="emailFlag4d" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        </tr>
       		    <tr>
 		        	<td><label for="Enable5d">Enable Level5</label></td>
-		        	<td><input type="checkbox" name="Enable5d" id="Enable5d" class="text ui-widget-content ui-corner-all" ></td>
+		        	<td><input type="checkbox" name="Enable5d" id="Enable5d" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        	<td><label for="memRole5d">Approver</label></td>
 		        	<td>
-		        	      <select name="memRole5d" id="memRole5d">
+		        	      <select name="memRole5d" id="memRole5d" disabled="disabled">
 							<option value="1">Panel Group</option>
 							<option value="2">RM</option>
 							<option value="3">PM</option>
@@ -1011,7 +1011,7 @@
 		        	</td>
 		        	<td><label for="panelId5d">Panel Group</label></td>
 		        	<td>
-		        	      <select name="panelId5d" id="panelId5d">
+		        	      <select name="panelId5d" id="panelId5d" disabled="disabled">
 		        	      <option value=0>None</option>
 						  <c:if test="${not empty Panel}">
 								<c:forEach var="listValue" items="${Panel}">
@@ -1022,14 +1022,14 @@
 					      </select>
 		        	</td>
 		        	<td><label for="emailFlag5d">E-Mail</label></td>
-	        		<td><input type="checkbox" name="emailFlag5d" id="emailFlag5d" class="text ui-widget-content ui-corner-all" ></td>
+	        		<td><input type="checkbox" name="emailFlag5d" id="emailFlag5d" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        </tr>
 			    <tr>
 		        	<td><label for="Enable6d">Enable Level6</label></td>
-		        	<td><input type="checkbox" name="Enable6d" id="Enable6d" class="text ui-widget-content ui-corner-all" ></td>
+		        	<td><input type="checkbox" name="Enable6d" id="Enable6d" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        	<td><label for="memRole6d">Approver</label></td>
 		        	<td>
-		        	      <select name="memRole6d" id="memRole6d">
+		        	      <select name="memRole6d" id="memRole6d" disabled="disabled">
 							<option value="1">Panel Group</option>
 							<option value="2">RM</option>
 							<option value="3">PM</option>
@@ -1042,7 +1042,7 @@
 		        	</td>
 		        	<td><label for="panelId6d">Panel Group</label></td>
 		        	<td>
-		        	      <select name="panelId6d" id="panelId6d">
+		        	      <select name="panelId6d" id="panelId6d" disabled="disabled">
 		        	      <option value=0>None</option>
 						  <c:if test="${not empty Panel}">
 								<c:forEach var="listValue" items="${Panel}">
@@ -1053,7 +1053,7 @@
 					      </select>
 		        	</td>
 		        	<td><label for="emailFlag6d">E-Mail</label></td>
-	        		<td><input type="checkbox" name="emailFlag6d" id="emailFlag6d" class="text ui-widget-content ui-corner-all" ></td>
+	        		<td><input type="checkbox" name="emailFlag6d" id="emailFlag6d" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        </tr>
 		     </table>
       <!-- Allow form submission with keyboard without duplicating the dialog button -->

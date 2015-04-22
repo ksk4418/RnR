@@ -67,15 +67,17 @@ public class PanelGroupController {
 
 				panel.setAutoGenerate(request.getParameter("autoGenerate")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				panel.setMinExpRequired(Integer.parseInt(request
-						.getParameter("minExpRequired")));
+				panel.setMinExpRequired(request.getParameter("minExpRequired").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("minExpRequired")));
 				panel.setPanelDescription(request
 						.getParameter("panelDescription"));
 				panel.setPanelName(request.getParameter("panelName"));
-				panel.setTitleGroup(Integer.parseInt(request
-						.getParameter("titleGroup")));
-				panel.setTreshold(Integer.parseInt(request
-						.getParameter("treshold")));
+				
+				panel.setTitleGroup(request.getParameter("titleGroup").isEmpty()? 0 : 
+							Integer.parseInt(request.getParameter("titleGroup")));
+				
+				panel.setTreshold(request.getParameter("treshold").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("treshold")));
 
 				panel.setLastUpdateDate(new Date());
 				panel.setLastUpdateUID((String) session.getAttribute("UID"));
@@ -103,21 +105,22 @@ public class PanelGroupController {
 
 				panel.setAutoGenerate(request.getParameter("autoGenerate")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				panel.setMinExpRequired(Integer.parseInt(request
-						.getParameter("minExpRequired")));
+				panel.setMinExpRequired(request.getParameter("minExpRequired").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("minExpRequired")));
 				panel.setPanelDescription(request
 						.getParameter("panelDescription"));
 				panel.setPanelName(request.getParameter("panelName"));
-				panel.setTitleGroup(Integer.parseInt(request
-						.getParameter("titleGroup")));
-				panel.setTreshold(Integer.parseInt(request
-						.getParameter("treshold")));
+				panel.setTitleGroup(request.getParameter("titleGroup").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("titleGroup")));
+				panel.setTreshold(request.getParameter("treshold").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("treshold")));
 
 				panel.setLastUpdateDate(new Date());
 				panel.setLastUpdateUID((String) session.getAttribute("UID"));
 				panel.setRowVersionNumber(1);
 
-				panel.setPanelId(Integer.parseInt(request.getParameter("id")));
+				panel.setPanelId(request.getParameter("id").isEmpty()? 0 :
+					Integer.parseInt(request.getParameter("id")));
 
 				rnrService.update(panel);
 				model.addAttribute("responseText",
@@ -217,8 +220,8 @@ public class PanelGroupController {
 				panelMembers.setMemberUID((request.getParameter("memberUID"))
 						.substring(0, request.getParameter("memberUID")
 								.lastIndexOf("@")));
-				panelMembers.setPanelId(Long.parseLong(request
-						.getParameter("panelId")));
+				panelMembers.setPanelId(request.getParameter("panelId").isEmpty()? 0L :
+							Long.parseLong(request.getParameter("panelId")));
 
 				panelMembers.setLastUpdateDate(new Date());
 				panelMembers.setLastUpdateUID((String) session
@@ -245,16 +248,16 @@ public class PanelGroupController {
 				panelMembers.setMemberUID((request.getParameter("memberUID"))
 						.substring(0, request.getParameter("memberUID")
 								.lastIndexOf("@")));
-				panelMembers.setPanelId(Long.parseLong(request
-						.getParameter("panelId")));
+				panelMembers.setPanelId(request.getParameter("panelId").isEmpty()? 0L :
+							Long.parseLong(request.getParameter("panelId")));
 
 				panelMembers.setLastUpdateDate(new Date());
 				panelMembers.setLastUpdateUID((String) session
 						.getAttribute("UID"));
 				panelMembers.setRowVersionNumber(1);
 
-				panelMembers.setPanelMemberId(Integer.parseInt(request
-						.getParameter("id")));
+				panelMembers.setPanelMemberId(request.getParameter("id").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("id")));
 
 				rnrService.update(panelMembers);
 				model.addAttribute("responseText", "Panel member '"

@@ -245,7 +245,7 @@
 			<table id="grid-keep-selection" class="table table-condensed table-hover table-striped">
 		        <tr>
 					<td><label for="roleNamee">Role Name</label></td>
-					<td><input type="text" name="roleNamee" id="roleNamee" class="text ui-widget-content ui-corner-all"></td>
+					<td><input type="text" name="roleNamee" id="roleNamee" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        	<td><label for="activeFle">Active</label></td>
 		        	<td><input type="checkbox" name="activeFle" id="activeFle" class="text ui-widget-content ui-corner-all" ></td>
 		        </tr>
@@ -268,9 +268,9 @@
 			<table id="grid-keep-selection" class="table table-condensed table-hover table-striped">
 		        <tr>
 					<td><label for="roleNamed">Role Name</label></td>
-					<td><input type="text" name="roleNamed" id="roleNamed" class="text ui-widget-content ui-corner-all"></td>
+					<td><input type="text" name="roleNamed" id="roleNamed" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 		        	<td><label for="activeFld">Active</label></td>
-		        	<td><input type="checkbox" name="activeFld" id="activeFld" class="text ui-widget-content ui-corner-all" ></td>
+		        	<td><input type="checkbox" name="activeFld" id="activeFld" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        </tr>
 		        <tr>
 		        	<td><label for="idd">Role ID</label></td>

@@ -155,8 +155,8 @@ public class SecurityController {
 				Role role = new Role();
 				role.setActiveFl(request.getParameter("activeFl")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				role.setId(Long.parseLong(request.getParameter("id").toString()
-						.trim()));
+				role.setId(request.getParameter("id").toString().trim().isEmpty()? 0L :
+							Long.parseLong(request.getParameter("id").toString().trim()));
 				role.setRoleName(request.getParameter("roleName"));
 
 				role.setLastUpdateDate(new Date());
@@ -238,7 +238,7 @@ public class SecurityController {
 				page.setRowVersionNumber(1);
 
 				if (page.getPageName() == null
-						|| page.getPageName().trim().length() == 0) {
+						|| page.getPageName().trim().length() == 0 || page.getPath()==null || page.getPath().trim().length()==0) {
 					model.addAttribute("responseText",
 							"Error: Page name & path are are mandatory field");
 					return rnrService.getPage("RESAJAX");
@@ -261,8 +261,8 @@ public class SecurityController {
 				Pages page = new Pages();
 				page.setActiveFl(request.getParameter("activeFl")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				page.setId(Long.parseLong(request.getParameter("id").toString()
-						.trim()));
+				page.setId(request.getParameter("id").toString().trim().isEmpty()? 0L :
+							Long.parseLong(request.getParameter("id").toString().trim()));
 				page.setPageName(request.getParameter("pageName"));
 				page.setPath(request.getParameter("path"));
 				page.setPageDisplayName(request.getParameter("pageDisplayName"));
@@ -363,7 +363,8 @@ public class SecurityController {
 				access.setDeleteFl(request.getParameter("deleteFl")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 				access.setAccessName(request.getParameter("accessName"));
-				access.setPageId(Long.parseLong(request.getParameter("pageId")));
+				access.setPageId(request.getParameter("pageId").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("pageId")));
 				access.setLastUpdateDate(new Date());
 				access.setLastUpdateUID((String) session.getAttribute("UID"));
 				access.setRowVersionNumber(1);
@@ -397,11 +398,13 @@ public class SecurityController {
 				access.setDeleteFl(request.getParameter("deleteFl")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 				access.setAccessName(request.getParameter("accessName"));
-				access.setPageId(Long.parseLong(request.getParameter("pageId")));
+				access.setPageId(request.getParameter("pageId").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("pageId")));
 				access.setLastUpdateDate(new Date());
 				access.setLastUpdateUID((String) session.getAttribute("UID"));
 				access.setRowVersionNumber(1);
-				access.setId(Long.parseLong(request.getParameter("id")));
+				access.setId(request.getParameter("id").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("id")));
 
 				rnrService.update(access);
 				model.addAttribute("responseText",
@@ -459,11 +462,10 @@ public class SecurityController {
 																		// Add
 				PageCateg pageCateg = new PageCateg();
 				pageCateg.setCategoryName(request.getParameter("categoryName"));
-				pageCateg.setPageId(Long.parseLong(request
-						.getParameter("pageName")));
+				pageCateg.setPageId(request.getParameter("pageName").isEmpty()? 0L :
+							Long.parseLong(request.getParameter("pageName")));
 				pageCateg.setLastUpdateDate(new Date());
-				pageCateg
-						.setLastUpdateUID((String) session.getAttribute("UID"));
+				pageCateg.setLastUpdateUID((String) session.getAttribute("UID"));
 				pageCateg.setRowVersionNumber(1);
 
 				if (pageCateg.getCategoryName() == null
@@ -490,13 +492,13 @@ public class SecurityController {
 																				// Edit
 				PageCateg pageCateg = new PageCateg();
 				pageCateg.setCategoryName(request.getParameter("categoryName"));
-				pageCateg.setPageId(Long.parseLong(request
-						.getParameter("pageName")));
+				pageCateg.setPageId(request.getParameter("pageName").isEmpty()? 0L :
+							Long.parseLong(request.getParameter("pageName")));
 				pageCateg.setLastUpdateDate(new Date());
-				pageCateg
-						.setLastUpdateUID((String) session.getAttribute("UID"));
+				pageCateg.setLastUpdateUID((String) session.getAttribute("UID"));
 				pageCateg.setRowVersionNumber(1);
-				pageCateg.setId(Long.parseLong(request.getParameter("id")));
+				pageCateg.setId(request.getParameter("id").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("id")));
 
 				rnrService.update(pageCateg);
 				model.addAttribute("responseText",
@@ -548,8 +550,8 @@ public class SecurityController {
 																		// Add
 				MemberRole memberRole = new MemberRole();
 				memberRole.setEmployeeId(request.getParameter("memberId"));
-				memberRole.setRoleId(Long.parseLong(request
-						.getParameter("roleId")));
+				memberRole.setRoleId(request.getParameter("roleId").isEmpty()? 0L :
+							Long.parseLong(request.getParameter("roleId")));
 				memberRole.setLastUpdateDate(new Date());
 				memberRole.setLastUpdateUID((String) session
 						.getAttribute("UID"));
@@ -577,13 +579,14 @@ public class SecurityController {
 																				// Edit
 				MemberRole memberRole = new MemberRole();
 				memberRole.setEmployeeId(request.getParameter("memberId"));
-				memberRole.setRoleId(Long.parseLong(request
-						.getParameter("roleId")));
+				memberRole.setRoleId(request.getParameter("roleId").isEmpty()? 0L :
+							Long.parseLong(request.getParameter("roleId")));
 				memberRole.setLastUpdateDate(new Date());
 				memberRole.setLastUpdateUID((String) session
 						.getAttribute("UID"));
 				memberRole.setRowVersionNumber(1);
-				memberRole.setId(Long.parseLong(request.getParameter("id")));
+				memberRole.setId(request.getParameter("id").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("id")));
 
 				rnrService.update(memberRole);
 				model.addAttribute("responseText",

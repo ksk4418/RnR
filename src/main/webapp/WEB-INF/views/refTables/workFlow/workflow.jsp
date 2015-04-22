@@ -195,7 +195,7 @@
 		<section class="cgi-rnr-main-content">
 			<div class="container">
 				<div class="row">
-				<h4 align="Center">Award</h4>
+				<h4 align="Center">WorkFlow</h4>
 			<table id="grid-keep-selection" class="table table-condensed table-hover table-striped">
 			    <thead>
 			        <tr>

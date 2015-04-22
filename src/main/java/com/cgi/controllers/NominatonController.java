@@ -484,9 +484,10 @@ public class NominatonController {
 			nom.setEmployeeId(request.getParameter("emplId"));
 			nom.setProjectName(request.getParameter("projectDesc"));
 			nom.setNominationPhase(1);
-			nom.setFY(Integer.parseInt((String) request.getParameter("FY")));
-			nom.setQuarter(Integer.parseInt((String) request
-					.getParameter("QTR")));
+			nom.setFY(request.getParameter("FY").isEmpty()? 0 : 
+				Integer.parseInt((String) request.getParameter("FY")));
+			nom.setQuarter(request.getParameter("QTR").isEmpty()? 0 : 
+				Integer.parseInt((String) request.getParameter("QTR")));
 			nom.setNominationPhase(1);
 			nom.setNominatedBy((String) session.getAttribute("memberId"));
 

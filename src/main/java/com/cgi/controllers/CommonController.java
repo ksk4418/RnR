@@ -64,8 +64,8 @@ public class CommonController {
 			if (request.getParameter("action").equalsIgnoreCase("1")) { // Action
 																		// Add
 				Frequency frequency = new Frequency();
-				frequency.setFrequencyDays(Integer.parseInt((request
-						.getParameter("frequencyDays"))));
+				frequency.setFrequencyDays(request.getParameter("frequencyDays").isEmpty()? 0 : 
+							Integer.parseInt((request.getParameter("frequencyDays"))));
 				frequency.setFrequencyDesc(request
 						.getParameter("frequencyDesc"));
 				frequency.setFrequencyName(request
@@ -95,8 +95,8 @@ public class CommonController {
 			} else if (request.getParameter("action").equalsIgnoreCase("2")) { // action
 																				// Edit
 				Frequency frequency = new Frequency();
-				frequency.setFrequencyDays(Integer.parseInt((request
-						.getParameter("frequencyDays"))));
+				frequency.setFrequencyDays(request.getParameter("frequencyDays").isEmpty()? 0 :
+							Integer.parseInt((request.getParameter("frequencyDays"))));
 				frequency.setFrequencyDesc(request
 						.getParameter("frequencyDesc"));
 				frequency.setFrequencyName(request
@@ -105,8 +105,8 @@ public class CommonController {
 				frequency
 						.setLastUpdateUID((String) session.getAttribute("UID"));
 				frequency.setRowVersionNumber(1);
-				frequency.setId(Long.parseLong(request.getParameter("id")
-						.toString().trim()));
+				frequency.setId(request.getParameter("id").toString().trim().isEmpty()? 0L :
+							Long.parseLong(request.getParameter("id").toString().trim()));
 				rnrService.update(frequency);
 				model.addAttribute("responseText",
 						"Frequency '" + frequency.getFrequencyName()
@@ -213,8 +213,8 @@ public class CommonController {
 						"true") ? 'Y' : 'N');
 				fy.setOpenFl(request.getParameter("open").equalsIgnoreCase(
 						"true") ? 'Y' : 'N');
-				fy.setId(Long.parseLong(request.getParameter("id").toString()
-						.trim()));
+				fy.setId(request.getParameter("id").toString().trim().isEmpty()? 0L :
+							Long.parseLong(request.getParameter("id").toString().trim()));
 				fy.setLastUpdateDate(new Date());
 				fy.setLastUpdateUID((String) session.getAttribute("UID"));
 				fy.setRowVersionNumber(1);
@@ -372,8 +372,8 @@ public class CommonController {
 				quarter.setLastUpdateDate(new Date());
 				quarter.setLastUpdateUID((String) session.getAttribute("UID"));
 				quarter.setRowVersionNumber(1);
-				quarter.setId(Long.parseLong(request.getParameter("id")
-						.toString().trim()));
+				quarter.setId(request.getParameter("id").toString().trim().isEmpty()? 0L :
+							Long.parseLong(request.getParameter("id").toString().trim()));
 				if(quarter.getOpenFl() == 'Y' && quarter.getCloseFl() == 'N') {
 					rnrService.runUpdateOrDelete("update Quarter set close_FL = 'Y' where OPEN_FL = 'Y' and CLOSE_FL = 'N' and qtr_id <> " + quarter.getId());
 					

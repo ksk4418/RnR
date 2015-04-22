@@ -13,10 +13,11 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 @Entity (name="Member")
 @NamedQuery(name = "Member.byNameandId", query = "from Member where employeeId = ? and employeeName = ?")
-@Table(name = "Member")
+@Table(name = "Member" , uniqueConstraints = { @UniqueConstraint(columnNames = { "EMPL_ID" }) })
 public class Member implements Serializable {
 
 	private static final long serialVersionUID = 1L;

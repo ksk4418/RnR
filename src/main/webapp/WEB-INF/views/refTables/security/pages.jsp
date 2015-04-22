@@ -263,7 +263,7 @@
 			<table id="grid-keep-selection" class="table table-condensed table-hover table-striped">
 		        <tr>
 					<td><label for="pageNamee">Page Name</label></td>
-					<td><input type="text" name="pageNamee" id="pageNamee" class="text ui-widget-content ui-corner-all"></td>
+					<td><input type="text" name="pageNamee" id="pageNamee" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 		        	<td><label for="activeFle">Active</label></td>
 		        	<td><input type="checkbox" name="activeFle" id="activeFle" class="text ui-widget-content ui-corner-all" ></td>
 		        </tr>
@@ -273,7 +273,7 @@
 		        	<label for="pageDisplayNamee">Display Name</label></td>
 					<td><input type="text" name="pageDisplayNamee" id="pageDisplayNamee" class="text ui-widget-content ui-corner-all"></td>
 		        	<td><label for="pathe">Path</label></td>
-					<td><input type="text" name="pathe" id="pathe" class="text ui-widget-content ui-corner-all"></td>
+					<td><input type="text" name="pathe" id="pathe" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 		        </tr>
 			</table>
       <!-- Allow form submission with keyboard without duplicating the dialog button -->
@@ -289,13 +289,13 @@
 					<td><label for="pageNamed">Page Name</label></td>
 					<td><input type="text" name="pageNamed" id="pageNamed" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 		        	<td><label for="activeFld">Active</label></td>
-		        	<td><input type="checkbox" name="activeFld" id="activeFld" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
+		        	<td><input type="checkbox" name="activeFld" id="activeFld" class="text ui-widget-content ui-corner-all" disabled="disabled"></td>
 		        </tr>
 		        <tr>
 <!-- 		        	<td><label for="idd">Page ID</label></td> -->
 		        	<td><input type="text" name="idd" id="idd" class="text ui-widget-content ui-corner-all" readonly="readonly" >
 		        	<label for="pageDisplayNamed">Display Name</label></td>
-					<td><input type="text" name="pageDisplayNamed" id="pageDisplayNamed" class="text ui-widget-content ui-corner-all"></td>
+					<td><input type="text" name="pageDisplayNamed" id="pageDisplayNamed" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 		        	<td><label for="pathd">Path</label></td>
 					<td><input type="text" name="pathd" id="pathd" class="text ui-widget-content ui-corner-all" readonly="readonly"></td>
 		        </tr>

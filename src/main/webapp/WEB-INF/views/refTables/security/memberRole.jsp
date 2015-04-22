@@ -189,7 +189,7 @@
 		<section class="cgi-rnr-main-content">
 			<div class="container">
 				<div class="row">
-				<h4 align="Center">Application Pages</h4>
+				<h4 align="Center">Member Roles</h4>
 			<table id="grid-keep-selection" class="table table-condensed table-hover table-striped">
 			    <thead>
 			        <tr>
@@ -254,7 +254,7 @@
 			<table id="grid-keep-selection" class="table table-condensed table-hover table-striped">
 		        <tr>
 					<td><label for="roleIde">Role</label></td>
-					<td><select id="roleIde" name="roleIde">
+					<td><select id="roleIde" name="roleIde" disabled="disabled">
 						  <c:if test="${not empty Role}">
 								<c:forEach var="listValue" items="${Role}">
 									<option value="${listValue.id}">${listValue.roleName }</option>
@@ -285,7 +285,7 @@
 			<table id="grid-keep-selection" class="table table-condensed table-hover table-striped">
 		        <tr>
 					<td><label for="roleIdd">Role</label></td>
-					<td><select id="roleIdd" name="roleIdd">
+					<td><select id="roleIdd" name="roleIdd" disabled="disabled">
 						  <c:if test="${not empty Role}">
 								<c:forEach var="listValue" items="${Role}">
 									<option value="${listValue.id}">${listValue.roleName }</option>
@@ -295,7 +295,7 @@
 					<td><label for="memIdd">Member Name</label></td>
 					<td>
 					<input type="hidden" name="idd" id="idd" class="text ui-widget-content ui-corner-all" >
-						<select id="memIdd" name="memIdd">
+						<select id="memIdd" name="memIdd" disabled="disabled">
 						  <c:if test="${not empty Member}">
 								<c:forEach var="listValue" items="${Member}">
 									<option value="${listValue.employeeId}">${listValue.employeeName }</option>

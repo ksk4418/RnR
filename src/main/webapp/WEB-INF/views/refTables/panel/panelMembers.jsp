@@ -187,7 +187,7 @@
 		<section class="cgi-rnr-main-content">
 			<div class="container">
 				<div class="row">
-				<h4 align="Center">Award</h4>
+				<h4 align="Center">Panel Members</h4>
 			<table id="grid-keep-selection" class="table table-condensed table-hover table-striped">
 			    <thead>
 			        <tr>
@@ -255,7 +255,7 @@
 		        <tr>
 					<td><label for="panelNamee">Panel Name</label></td>
 					<td>
-						<select name="panelNamee" id="panelNamee">
+						<select name="panelNamee" id="panelNamee" disabled="disabled">
 						  <c:if test="${not empty Panel}">
 								<c:forEach var="listValue" items="${Panel}">
 									<option value="${listValue.panelId}">${listValue.panelName }</option>
@@ -288,7 +288,7 @@
 		        <tr>
 					<td><label for="panelNamed">Panel Name</label></td>
 					<td>
-						<select name="panelNamed" id="panelNamed">
+						<select name="panelNamed" id="panelNamed" disabled="disabled">
 						  <c:if test="${not empty Panel}">
 								<c:forEach var="listValue" items="${Panel}">
 									<option value="${listValue.panelId}">${listValue.panelName }</option>
@@ -299,7 +299,7 @@
 		        	<td><label for="memberIDd">Member UID</label></td>
 		        	<td>
    			        	<input type="hidden" name="idd" id="idd" class="text ui-widget-content ui-corner-all" >
-   			        	<select name="memberIDd" id="memberIDd">
+   			        	<select name="memberIDd" id="memberIDd" disabled="disabled">
 						  <c:if test="${not empty Member}">
 								<c:forEach var="listValue" items="${Member}">
 									<option value="${listValue.memberEmail}">${listValue.employeeName }</option>

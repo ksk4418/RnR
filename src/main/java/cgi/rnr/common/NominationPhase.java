@@ -8,12 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 @SuppressWarnings("serial")
 @Entity(name = "NominationPhase")
+@Table(name = "NominationPhase", uniqueConstraints = { @UniqueConstraint(columnNames = { "PHASE" }) })
 public class NominationPhase implements Serializable {
 
 	@Id

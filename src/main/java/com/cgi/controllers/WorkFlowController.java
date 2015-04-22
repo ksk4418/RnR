@@ -102,8 +102,8 @@ public class WorkFlowController {
 				wf.setLastUpdateDate(new Date());
 				wf.setLastUpdateUID((String) session.getAttribute("UID"));
 				wf.setRowVersionNumber(1);
-				wf.setId(Long.parseLong(request.getParameter("id").toString()
-						.trim()));
+				wf.setId(request.getParameter("id").toString().trim().isEmpty()? 0L :
+							Long.parseLong(request.getParameter("id").toString().trim()));
 
 				rnrService.update(wf);
 				model.addAttribute("responseText",
@@ -195,59 +195,82 @@ public class WorkFlowController {
 
 				wfl.setWorkFlowLevelName(request
 						.getParameter("workFlowLevelName"));
-				wfl.setWorkFlowId(Long.parseLong(request
-						.getParameter("workFlowId")));
-				wfl.setAwardCriteriaId(Long.parseLong(request
-						.getParameter("awardCriteriaId")));
+				wfl.setWorkFlowId(request.getParameter("workFlowId").isEmpty()? 0L :
+							Long.parseLong(request.getParameter("workFlowId")));
+				wfl.setAwardCriteriaId(request.getParameter("awardCriteriaId").isEmpty()? 0L :
+							Long.parseLong(request.getParameter("awardCriteriaId")));
 				wfl.setLastUpdateDate(new Date());
 				wfl.setLastUpdateUID((String) session.getAttribute("UID"));
 				wfl.setRowVersionNumber(1);
 
 				wfl.setEnableFl1(request.getParameter("Enable1")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				wfl.setMemberLevel1(Integer.parseInt(request
-						.getParameter("memRole1")));
-				wfl.setPanelId1(Long.parseLong(request.getParameter("panelId1")));
+				wfl.setMemberLevel1(request.getParameter("memRole1").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("memRole1")));
+				
+				wfl.setPanelId1(request.getParameter("panelId1").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("panelId1")));
+				
 				wfl.setEmailFlag1(request.getParameter("emailFlag1")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 
 				wfl.setEnableFl2(request.getParameter("Enable2")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				wfl.setMemberLevel2(Integer.parseInt(request
-						.getParameter("memRole2")));
-				wfl.setPanelId2(Long.parseLong(request.getParameter("panelId2")));
+				
+				wfl.setMemberLevel2(request.getParameter("memRole2").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("memRole2")));
+				
+				wfl.setPanelId2(request.getParameter("panelId2").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("panelId2")));
+				
 				wfl.setEmailFlag2(request.getParameter("emailFlag2")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 
 				wfl.setEnableFl3(request.getParameter("Enable3")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				wfl.setMemberLevel3(Integer.parseInt(request
-						.getParameter("memRole3")));
-				wfl.setPanelId3(Long.parseLong(request.getParameter("panelId3")));
+				
+				wfl.setMemberLevel3(request.getParameter("memRole3").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("memRole3")));
+				
+				wfl.setPanelId3(request.getParameter("panelId3").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("panelId3")));
+				
 				wfl.setEmailFlag3(request.getParameter("emailFlag3")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 
 				wfl.setEnableFl4(request.getParameter("Enable4")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				wfl.setMemberLevel4(Integer.parseInt(request
-						.getParameter("memRole4")));
-				wfl.setPanelId4(Long.parseLong(request.getParameter("panelId4")));
+				
+				wfl.setMemberLevel4(request.getParameter("memRole4").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("memRole4")));
+				
+				wfl.setPanelId4(request.getParameter("panelId4").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("panelId4")));
+				
 				wfl.setEmailFlag4(request.getParameter("emailFlag4")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 
 				wfl.setEnableFl5(request.getParameter("Enable5")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				wfl.setMemberLevel5(Integer.parseInt(request
-						.getParameter("memRole5")));
-				wfl.setPanelId5(Long.parseLong(request.getParameter("panelId5")));
+				
+				wfl.setMemberLevel5(request.getParameter("memRole5").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("memRole5")));
+				
+				wfl.setPanelId5(request.getParameter("panelId5").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("panelId5")));
+				
 				wfl.setEmailFlag5(request.getParameter("emailFlag5")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 
 				wfl.setEnableFl6(request.getParameter("Enable6")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				wfl.setMemberLevel6(Integer.parseInt(request
-						.getParameter("memRole6")));
-				wfl.setPanelId6(Long.parseLong(request.getParameter("panelId6")));
+				
+				wfl.setMemberLevel6(request.getParameter("memRole6").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("memRole6")));
+				
+				wfl.setPanelId6(request.getParameter("panelId6").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("panelId6")));
+				
 				wfl.setEmailFlag6(request.getParameter("emailFlag6")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 
@@ -278,66 +301,96 @@ public class WorkFlowController {
 
 				wfl.setWorkFlowLevelName(request
 						.getParameter("workFlowLevelName"));
-				wfl.setWorkFlowId(Long.parseLong(request
-						.getParameter("workFlowId")));
-				wfl.setAwardCriteriaId(Long.parseLong(request
-						.getParameter("awardCriteriaId")));
+				
+				wfl.setWorkFlowId(request.getParameter("workFlowId").isEmpty()? 0L :
+							Long.parseLong(request.getParameter("workFlowId")));
+				
+				wfl.setAwardCriteriaId(request.getParameter("awardCriteriaId").isEmpty()? 0L :
+							Long.parseLong(request.getParameter("awardCriteriaId")));
+				
 				wfl.setLastUpdateDate(new Date());
+				
 				wfl.setLastUpdateUID((String) session.getAttribute("UID"));
+				
 				wfl.setRowVersionNumber(1);
 
 				wfl.setEnableFl1(request.getParameter("Enable1")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				wfl.setMemberLevel1(Integer.parseInt(request
-						.getParameter("memRole1")));
-				wfl.setPanelId1(Long.parseLong(request.getParameter("panelId1")));
+				
+				wfl.setMemberLevel1(request.getParameter("memRole1").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("memRole1")));
+				
+				wfl.setPanelId1(request.getParameter("panelId1").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("panelId1")));
+				
 				wfl.setEmailFlag1(request.getParameter("emailFlag1")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 
 				wfl.setEnableFl2(request.getParameter("Enable2")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				wfl.setMemberLevel2(Integer.parseInt(request
-						.getParameter("memRole2")));
-				wfl.setPanelId2(Long.parseLong(request.getParameter("panelId2")));
+				
+				wfl.setMemberLevel2(request.getParameter("memRole2").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("memRole2")));
+				
+				wfl.setPanelId2(request.getParameter("panelId2").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("panelId2")));
+				
 				wfl.setEmailFlag2(request.getParameter("emailFlag2")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 
 				wfl.setEnableFl3(request.getParameter("Enable3")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				wfl.setMemberLevel3(Integer.parseInt(request
-						.getParameter("memRole3")));
-				wfl.setPanelId3(Long.parseLong(request.getParameter("panelId3")));
+				
+				wfl.setMemberLevel3(request.getParameter("memRole3").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("memRole3")));
+				
+				wfl.setPanelId3(request.getParameter("panelId3").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("panelId3")));
+				
 				wfl.setEmailFlag3(request.getParameter("emailFlag3")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 
 				wfl.setEnableFl4(request.getParameter("Enable4")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				wfl.setMemberLevel4(Integer.parseInt(request
-						.getParameter("memRole4")));
-				wfl.setPanelId4(Long.parseLong(request.getParameter("panelId4")));
+				
+				wfl.setMemberLevel4(request.getParameter("memRole4").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("memRole4")));
+				
+				wfl.setPanelId4(request.getParameter("panelId4").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("panelId4")));
+				
 				wfl.setEmailFlag4(request.getParameter("emailFlag4")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 
 				wfl.setEnableFl5(request.getParameter("Enable5")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				wfl.setMemberLevel5(Integer.parseInt(request
-						.getParameter("memRole5")));
-				wfl.setPanelId5(Long.parseLong(request.getParameter("panelId5")));
+				
+				wfl.setMemberLevel5(request.getParameter("memRole5").isEmpty()? 0:
+							Integer.parseInt(request.getParameter("memRole5")));
+				
+				wfl.setPanelId5(request.getParameter("panelId5").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("panelId5")));
+				
 				wfl.setEmailFlag5(request.getParameter("emailFlag5")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 
 				wfl.setEnableFl6(request.getParameter("Enable6")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
-				wfl.setMemberLevel6(Integer.parseInt(request
-						.getParameter("memRole6")));
-				wfl.setPanelId6(Long.parseLong(request.getParameter("panelId6")));
+				
+				wfl.setMemberLevel6(request.getParameter("memRole6").isEmpty()? 0 :
+							Integer.parseInt(request.getParameter("memRole6")));
+				
+				wfl.setPanelId6(request.getParameter("panelId6").isEmpty()? 0L :
+					Long.parseLong(request.getParameter("panelId6")));
+				
 				wfl.setEmailFlag6(request.getParameter("emailFlag6")
 						.equalsIgnoreCase("true") ? 'Y' : 'N');
 
-				wfl.setWorkFlowLevelsId(Long.parseLong(request
-						.getParameter("id").toString().trim()));
+				wfl.setWorkFlowLevelsId(request.getParameter("id").toString().trim().isEmpty()? 0L :
+							Long.parseLong(request.getParameter("id").toString().trim()));
 
 				rnrService.update(wfl);
+				
 				model.addAttribute("responseText", "Workflow level name '"
 						+ wfl.getWorkFlowLevelName() + "' updated successfully");
 				return "commonPages/ajaxCallResponse";
